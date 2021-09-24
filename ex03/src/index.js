@@ -12,5 +12,8 @@ function rangeOfNumbers(startN, endN) {
 }
 // Only change code above this line
 
-console.log(rangeOfNumbers(6,5)); // Change this line
+console.log(rangeOfNumbers(1, 7));
+console.log(rangeOfNumbers(3, 10));
+console.log(rangeOfNumbers(5, 5));
+console.log(rangeOfNumbers(7, 5)); // Change this line
 module.exports = rangeOfNumbers;

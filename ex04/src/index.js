@@ -1,22 +1,35 @@
 // Only change code below this line
 function sumFibonacci(num) {
-    var prev_fib = 0, cur_fib = 0;
-    var sum = 0;
-    while(cur_fib <= num) {
-        if (cur_fib % 2 !== 0) {
-            sum += cur_fib;
+    if(num < 1) {
+        return 0;
+    } else if(num ==1) {
+        return 1;
+    } else {
+        let fibs = [1, 1];
+        let count = 0;
+        let fibNums;
+
+        while (num > count) {
+            fibNums = fibs[count] + fibs[count + 1];
+
+            if (fibNums <= num) {
+                fibs.push(fibNums);
+            }
+
+            count++;
         }
 
-    var next_fib = cur_fib + prev_fib;
-    prev_fib = cur_fib;
-    cur_fib = next_fib;
-}
-  
-    return sum;
+    return fibs.filter(n => n % 2 !== 0).reduce((a,b) => a + b);
+
+    }
 }
 // Only change code above this line
 
-console.log(sumFibonacci(1)); // Change this line
+console.log(sumFibonacci(1));
+console.log(sumFibonacci(10));
+console.log(sumFibonacci(20));
+console.log(sumFibonacci(4));
+console.log(sumFibonacci(-5)); // Change this line
 module.exports = sumFibonacci;
 
 // 1, 1, 2, 3, 5, 8, 13, 21, 34;
